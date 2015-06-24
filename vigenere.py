@@ -26,6 +26,7 @@ def encrypt(m, k):
             result.append(next % 26)
     return result
 
+
 #defines the decryption method
 def decrypt(m, k):
     result = []
