@@ -1,6 +1,8 @@
+#takes user input for the message and the key
 message = raw_input("Enter a message: ").lower()
-key = raw_input("Enter a word key: ").lower()
+key = raw_input("Enter a single-word key: ").lower()
 
+#turns letters in words into numeric values
 def toArray(value):
     arr = []
     for x in range(len(value)):
@@ -11,6 +13,7 @@ def toArray(value):
 msg = toArray(message)
 ky = toArray(key)
 
+#defines the encryption method
 def encrypt(m, k):
     result = []
     spaces = 0
@@ -23,6 +26,7 @@ def encrypt(m, k):
             result.append(next % 26)
     return result
 
+#defines the decryption method
 def decrypt(m, k):
     result = []
     spaces = 0
@@ -35,6 +39,7 @@ def decrypt(m, k):
             result.append(next % 26)
     return result
 
+#converts numeric values back into letters
 def toLetters(mess):
     final = ""
     for x in mess:
@@ -42,6 +47,7 @@ def toLetters(mess):
         final += chr(x)
     return final
 
+#gives users the chance to choose to encrypt or decrypt
 coded = None
 option = raw_input("(e)ncrypt or (d)ecrypt: ")
 if option == "e":
